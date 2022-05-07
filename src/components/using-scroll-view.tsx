@@ -7,15 +7,12 @@ import Animated, {
 import WordPage from "./word-page";
 
 const words = [
-  "one",
-  "two",
-  "three",
-  "four",
-  "five",
-  "six",
-  "seven",
-  "eight",
-  "nine",
+  "Hello",
+  "World",
+  "React Native",
+  "Reanimated",
+  "And",
+  "Gestures",
 ];
 
 export default function UsingScrollView() {
@@ -32,15 +29,22 @@ export default function UsingScrollView() {
       pagingEnabled
       style={styles.container}
     >
-      {words.map((word, index) => (
-        <WordPage
-          key={index}
-          index={index}
-          word={word}
-          translateX={translateX}
-          bg={`rgba(140,20,252,0.${index + 1})`}
-        />
-      ))}
+      {words.map((word, index) => {
+        const MIN_OPACITY = 0.4;
+        const MAX_OPACITY = 1;
+        const currentOpacity =
+          (index / words.length) * (MAX_OPACITY - MIN_OPACITY) + MIN_OPACITY;
+
+        return (
+          <WordPage
+            key={index}
+            index={index}
+            word={word}
+            translateX={translateX}
+            bg={`rgba(140,0,152,${currentOpacity})`}
+          />
+        );
+      })}
     </Animated.ScrollView>
   );
 }
