@@ -6,6 +6,7 @@ import {
   UsingReactNativeApi,
   UsingReanimated,
   UsingScrollView,
+  UsingInterpolateColor,
 } from "./src/components";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
@@ -15,7 +16,8 @@ export default function App() {
       {/* <UsingReactNativeApi /> */}
       {/* <UsingReanimated /> */}
       {/* <UsingPanGestures /> */}
-      <UsingScrollView />
+      {/* <UsingScrollView /> */}
+      <UsingInterpolateColor />
     </GestureHandlerRootView>
   );
 }
